@@ -2,11 +2,18 @@ body {
   background-color: beige;
   text-align: center;
   font-family: "Cabin";
+  padding-bottom: 400px;
 }
 
 img {
-  width: 100px;
+  width: 350px;
+  padding: 10px;
+}
+
+.profilepic {
+  width: 300px;
   padding: 0px 10px;
+  border-radius: 200px;
 }
 
 h1 {
@@ -30,7 +37,6 @@ p {
 
 ul {
   font-size: 24px;
-  width: 40%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -43,21 +49,32 @@ li {
   font-style: italic
 }
 
-.box {
-  font-size: 24px;
-  float: left;
-  border: 1px solid #000;
-  width: 300px;
-  margin: 0px 4px;
+
+
+
+@media only screen and (max-width: 957px) {
+  p, ul {
+    width: 80%;
+  }
 }
 
-img {
-  width: 280px;
-}
+@media only screen and (min-width: 957px) {
+  p, ul {
+    width: 30%;
+  }
 
-.horizontalBoxes {
-  display: inline-block;
-  text-align: center;
-  padding: 0;
-  margin: 0;
+  .horizontalBoxes {
+    display: inline-block;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .horizontalBox {
+    font-size: 24px;
+    float: left;
+    width: 300px;
+    margin: 0px 4px;
+    text-align: center
+  }
 }
