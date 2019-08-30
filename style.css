@@ -12,7 +12,6 @@ img {
 
 .profilepic {
   width: 300px;
-  padding: 0px 10px;
   border-radius: 200px;
 }
 
@@ -50,17 +49,59 @@ li {
 }
 
 
+.horizontalBox {
+  font-size: 24px;
+}
+
+.meetings {
+  display: inline-block;
+  text-align: center;
+  margin-top: 20px;
+  max-width: 70%;
+  line-height: 60px;
+  
+  
+}
+
+.meeting {
+  background: wheat;
+  border: black;
+  font-size: 28px;
+  border-radius: 100px;
+  padding: 10px 20px;
+  margin: 0px 3px;
+  overflow: visible;
+  white-space: nowrap;
+}
+
+a.meeting:link, a.meeting:visited {
+  color:black;
+}
+
+a.meeting:hover {
+  color:darkgrey;
+}
 
 
 @media only screen and (max-width: 957px) {
   p, ul {
     width: 80%;
   }
+  .horizontalBox {
+    padding-bottom: 20px;
+  }
+  img{
+    padding-bottom: 0px;
+  }
 }
 
 @media only screen and (min-width: 957px) {
   p, ul {
     width: 30%;
+  }
+
+  img {
+    padding-bottom: 25px;
   }
 
   .horizontalBoxes {
@@ -71,7 +112,6 @@ li {
   }
   
   .horizontalBox {
-    font-size: 24px;
     float: left;
     width: 300px;
     margin: 0px 4px;
