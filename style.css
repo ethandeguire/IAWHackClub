@@ -63,15 +63,25 @@ li {
   
 }
 
-.meeting {
+.link {
+
+}
+
+a.link:link, a.link:visited {
+  color:black;
+}
+
+a.link:hover {
+  color:darkgrey;
+}
+
+.link {
   background: wheat;
   border: black;
   font-size: 28px;
   border-radius: 100px;
   padding: 10px 20px;
-  margin: 0px 3px;
-  overflow: visible;
-  white-space: nowrap;
+  margin: 55px 25px;
 }
 
 a.meeting:link, a.meeting:visited {
