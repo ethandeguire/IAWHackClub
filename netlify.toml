@@ -1,7 +1,7 @@
 [build]
   functions = "functions-build"
   command = "npm run build"
-  publish = "public/"
+  publish = ""
 
 [template.environment]
   FAUNADB_SERVER_SECRET = "fnADXpb-QnACBfoty2igP6pY5A6ka5GcYJpML2Lu"
