@@ -22,7 +22,8 @@ h1 {
 h2 {
   font-size: 36px;
   padding-bottom: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 5px;
+  margin-top: 50px;
 }
 
 p {
@@ -48,7 +49,6 @@ li {
   font-style: italic
 }
 
-
 .horizontalBox {
   font-size: 24px;
 }
@@ -59,39 +59,78 @@ li {
   margin-top: 20px;
   max-width: 70%;
   line-height: 60px;
-  
-  
 }
 
-.link {
-
-}
-
-a.link:link, a.link:visited {
-  color:black;
-}
-
-a.link:hover {
-  color:darkgrey;
-}
-
-.link {
+.meeting {
   background: wheat;
   border: black;
   font-size: 28px;
   border-radius: 100px;
   padding: 10px 20px;
-  margin: 55px 25px;
+  margin: 0px 3px;
+  overflow: visible;
+  white-space: nowrap;
+  margin: 0px 3px;
 }
 
 a.meeting:link, a.meeting:visited {
-  color:black;
+  color: black;
 }
 
 a.meeting:hover {
-  color:darkgrey;
+  color: darkgrey;
 }
 
+.linky {
+  background: wheat;
+  border: black;
+  font-size: 28px;
+  border-radius: 100px;
+  padding: 5px 10px;
+  margin: 55px 25px;
+  overflow: visible;
+  white-space: nowrap;
+}
+
+a.linky:link, a.linky:visited {
+  color: black;
+}
+
+a.linky:hover {
+  color: darkgrey;
+}
+
+.errorbox {
+  border-style: solid;
+  border-color: red;
+  background: white;
+  height: 100%;
+  margin-bottom: 25px;
+}
+
+.errorboxholder {
+  vertical-align: center;
+}
+
+input[type=text] {
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.attendee {
+  border-style: solid;
+  border-color: black;
+  margin: 10px;
+  min-width: 200px;
+  background: whitesmoke
+}
+
+.attendeesContainer {
+  display: inline-block;
+  text-align: center
+}
 
 @media only screen and (max-width: 957px) {
   p, ul {
@@ -100,7 +139,7 @@ a.meeting:hover {
   .horizontalBox {
     padding-bottom: 20px;
   }
-  img{
+  img {
     padding-bottom: 0px;
     padding-top: 0px;
   }
@@ -110,19 +149,16 @@ a.meeting:hover {
   p, ul {
     width: 30%;
   }
-
   img {
     padding-bottom: 25px;
     padding-top: 0px;
   }
-
   .horizontalBoxes {
     display: inline-block;
     text-align: center;
     padding: 0;
     margin: 0;
   }
-  
   .horizontalBox {
     float: left;
     width: 300px;

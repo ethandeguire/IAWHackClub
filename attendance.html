@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>IAW Hack Club</title>
+  <link href="./style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin">
+
+  <script type="text/javascript">
+    var datefield = document.createElement("input")
+    datefield.setAttribute("type", "date")
+    if (datefield.type != "date") { //if browser doesn't support input type="date", load files for jQuery UI Date Picker
+      document.write('<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />\n')
+      document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"><\/script>\n')
+      document.write('<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"><\/script>\n')
+    }
+  </script>
+   
+  <script>
+    if (datefield.type != "date") { //if browser doesn't support input type="date", initialize date picker widget:
+      jQuery(function ($) { //on document.ready
+        $('#birthday').datepicker();
+      })
+    }
+
+    const processSubmit = () => {
+      const date = document.getElementById('dateselector').value
+      if (!date) { alert('Please complete the dates'); return 'no' }
+      return getAttendeesByDate(date)
+    }
+
+    const getAttendeesByDate = (date) => {
+      const queryParams = `?date=${date}`
+      return fetch('http://localhost:9000/.netlify/functions/get-all-on-date' + queryParams)
+        .then(res => res.json())
+        .then(attendees => {
+          console.log(attendees)
+          
+          document.getElementById('attendeesContainer').innerHTML = ''
+          
+          attendees.forEach(attendee => {
+            let attendeeElement = document.createElement('div')
+            attendeeElement.innerHTML = `${attendee['data']['firstname']} ${attendee['data']['lastname']}`
+            attendeeElement.className = 'attendee'
+
+            document.getElementById('attendeesContainer').appendChild(attendeeElement)
+          });
+
+          // window.location.href = "./success.html";
+        })
+        .catch(err => { console.log(err) })
+    }
+
+  </script>
+
+</head>
+
+<body>
+  <h1>Find the attendance for a meeting</h1>
+
+  <div style='font-size: 28px'>
+    <b>Date of meeting:</b>
+    <input style='font-size: inherit' type="date" id="dateselector" />
+    <button class='linky' onclick='processSubmit()'> Submit </button>
+  </div>
+
+  <div id='attendeesContainer' class="attendeesContainer">
+      <div class="attendee">DeGuire, Gavin</div>
+      <div class="attendee">e, e</div>
+  </div>
+
+</body>
+
+</html>
+
+
+
+ 

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>IAW Hack Club</title>
+  <link href="../style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin">
+  <script>
+    const SendSignIn = () => {
+      const name = document.getElementById('Name').value.split(' ')
+
+      if (name.length != 2) {
+        let existingErrorBox = document.getElementById('errorbox')
+
+        if (existingErrorBox) {
+          existingErrorBox.innerHTML = 'Please enter your first and last name'
+        } else {
+          let newErrorBox = document.createElement('div')
+          newErrorBox.id = 'errorbox'
+          newErrorBox.className = 'errorbox'
+          newErrorBox.innerHTML = 'Please enter your first and last name'
+          document.getElementById('errorboxholder').appendChild(newErrorBox)
+        }
+      }
+      else {
+        document.getElementById('errorboxholder').innerHTML = ''
+
+        const queryParams = `?firstname=${name[0]}&lastname=${name[1]}`
+
+        return fetch('http://localhost:9000/.netlify/functions/signin' + queryParams, {
+        })
+          .then(res => {
+            console.log(res)
+            window.location.href = "./success.html";
+          })
+          .catch(err => { console.log(err) })
+      }
+    }
+  </script>
+</head>
+
+
+<body>
+  <h1> Sign In</h1>
+
+  <div id='errorboxholder'></div>
+
+  <p> Name: <input type="text" id="Name"> </p> <br>
+  <button class='linky' onclick="SendSignIn()"> Submit </button>
+
+</body>
+
+</html>
