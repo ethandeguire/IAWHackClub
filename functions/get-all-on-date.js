@@ -17,7 +17,13 @@ exports.handler = (event, context, callback) => {
       let objectsOnDate = []
 
       urlObjects.forEach(urlObject => {
-        const date = new Date(new Date(urlObject.ts / 1000).toUTCString())
+        const date = new Date(urlObject.ts / 1000)
+        const date2 = new Date(urlObject['data']['datetime'])
+        console.log(searchDate.getDate(), date.getDate(), date2.getDate())
+        console.log(searchDate, date, date2)
+        console.log('\n\n')
+
+        // console.log(searchDate, formData['date'])
         if (sameDay(date, searchDate)) { objectsOnDate.push(urlObject) }
       });
 
