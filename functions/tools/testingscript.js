@@ -10,13 +10,13 @@ const helpers = require('./helpers')
 const deleteDocument = helpers.deleteDocument
 const getAllObjectsInCollection = helpers.getAllObjectsInCollection
 
-getAllObjectsInCollection('signins')
-  .then((response) => {
-    console.log(response)
-  })
-  .catch((response) => {
-    console.log(response)
-  })
+// getAllObjectsInCollection('signins')
+//   .then((response) => {
+//     console.log(response)
+//   })
+//   .catch((response) => {
+//     console.log(response)
+//   })
 
 // client.query(q.Create(q.Collection("signins"),
 //   { data: { firstname: "Ethan", lastname: "DeGuire" } }))
