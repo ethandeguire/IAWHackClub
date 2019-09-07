@@ -33,7 +33,7 @@
 
     const getAttendeesByDate = (date) => {
       const queryParams = `?date=${date}`
-      return fetch('http://localhost:9000/.netlify/functions/get-all-on-date' + queryParams)
+      return fetch('https://iaw.hackclub.com/.netlify/functions/get-all-on-date' + queryParams)
         .then(res => res.json())
         .then(attendees => {
           console.log(attendees)

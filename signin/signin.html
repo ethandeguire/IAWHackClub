@@ -29,7 +29,7 @@
 
         const queryParams = `?firstname=${name[0]}&lastname=${name[1]}`
 
-        return fetch('http://localhost:9000/.netlify/functions/signin' + queryParams, {
+        return fetch('https://iaw.hackclub.com/.netlify/functions/signin' + queryParams, {
         })
           .then(res => {
             console.log(res)
