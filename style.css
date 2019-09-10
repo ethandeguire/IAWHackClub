@@ -8,6 +8,12 @@ body {
 img {
   width: 350px;
   padding: 10px;
+  text-align: inherit
+}
+
+.smallimg {
+  max-width: 200px;
+  max-height: 200px;
 }
 
 .profilepic {
