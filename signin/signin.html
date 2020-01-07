@@ -7,11 +7,17 @@
   <title>IAW Hack Club</title>
   <link href="../style.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin">
-  <script>
-    const SendSignIn = () => {
-      const name = document.getElementById('Name').value.split(' ')
 
-      if (name.length != 2) {
+  <script src="airtable.browser.js"></script>
+  <script>
+    var Airtable = require('airtable');
+    var base = new Airtable({ apiKey: 'keyehAghfQf8EaCdZ' }).base('apppBuaE7uUforCYo');
+
+    var SendSignIn = () => {
+
+      name = document.getElementById('name').value
+
+      if (name.split(" ").length != 2) {
         let existingErrorBox = document.getElementById('errorbox')
 
         if (existingErrorBox) {
@@ -25,19 +31,17 @@
         }
       }
       else {
-        document.getElementById('errorboxholder').innerHTML = ''
-
-        const queryParams = `?firstname=${name[0]}&lastname=${name[1]}`
-
-        return fetch('https://iaw.hackclub.com/.netlify/functions/signin' + queryParams, {
+        base('signins').create({
+          "Name": document.getElementById('name').value,
+          "Date": new Date().toLocaleString().split('T')[0].split(",")[0]
+        }, function (err, record) {
+          if (err) { console.log(err); return; }
+          console.log("Success")
+          window.location.href = "./success.html";
         })
-          .then(res => {
-            console.log(res)
-            window.location.href = "./success.html";
-          })
-          .catch(err => { console.log(err) })
       }
     }
+
   </script>
 </head>
 
@@ -47,7 +51,7 @@
 
   <div id='errorboxholder'></div>
 
-  <p> Name: (REAL NAMES - THE SCHOOL KEEPS THESE!)<input type="text" id="Name"> </p> <br>
+  <p> Name: (REAL NAMES - THE SCHOOL KEEPS THESE!)<input type="text" id="name"> </p> <br>
   <button class='linky' onclick="SendSignIn()"> Submit </button>
 
 </body>
