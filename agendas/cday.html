@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Hack Club C-Day</title>
+  <link href="../style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin">
+  <script>
+    var show = (divID) => {
+      document.getElementById(divID).style.display = (document.getElementById(divID).style.display == "none" ? "block" : "none")
+      // document.getElementById(divID).style.display="block"
+    } 
+  </script>
+</head>
+
+<body style="width: 100%;">
+
+  <h1> Hack Club C-Day 2020</h1>
+
+  <h1>Sorting Algorithms</h1>
+
+  <table style="margin-left:auto;margin-right:auto;font-size: 1.5rem;">
+    <tr>
+      <td>Insertion Sort <br> <button onclick="show('insertion')">Show Animation</button></td>
+      <td><img id="insertion" style="display: none;" src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Insertion-sort-example.gif"></img></td>
+    </tr>
+    <tr>
+      <td>Selection Sort <br> <button onclick="show('selection')">Show Animation</button></td>
+      <td><img id="selection" style="display: none;" src="https://i0.wp.com/algorithms.tutorialhorizon.com/files/2019/01/Selection-Sort-Gif.gif?ssl=1"></img>
+      </td>
+    </tr>
+    <tr>
+      <td>Bubble Sort <br> <button onclick="show('bubble')">Show Animation</button></td>
+      <td><img id="bubble" style="display: none;" src="https://upload.wikimedia.org/wikipedia/commons/0/06/Bubble-sort.gif"></img></td>
+    </tr>
+    <tr>
+      <td>Merge Sort <br> <button onclick="show('merge')">Show Animation</button></td>
+      <td><img id="merge" style="display: none;" src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif"></img></td>
+    </tr>
+    <tr>
+      <td>Barack Obama's views <br>on Sorting Algorithms<br> <button onclick="show('obama')">Show Video</button></td>
+      <td><iframe id="obama" style="display:none" width="560" height="315" src="https://www.youtube.com/embed/k4RRi_ntQc8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+    </tr>
+  </table>
+
+  <br><br>
+  <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/k4RRi_ntQc8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></body> -->
+
+</html>

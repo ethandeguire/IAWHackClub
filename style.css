@@ -195,3 +195,18 @@ input[type=text] {
     text-align: center
   }
 }
+
+td{
+  padding: 15px;
+}
+
+button {
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  background-color: #555555;
+}
